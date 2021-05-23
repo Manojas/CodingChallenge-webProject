@@ -1,0 +1,7 @@
+com\game\dao\PlayerDAOInterface.class
+com\game\model\Player.class
+com\game\utility\GetConnection.class
+com\game\utility\MyException.class
+com\game\dao\PlayerDAOImple.class
+com\game\controller\ViewPlayers.class
+com\game\controller\RegisterPlayer.class

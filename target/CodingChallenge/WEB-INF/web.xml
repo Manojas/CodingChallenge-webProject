@@ -1,0 +1,37 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>RegisterPlayer</servlet-name>
+  	<display-name>RegisterPlayer</display-name>
+  	<description></description>
+  	<servlet-class>com.game.controller.RegisterPlayer</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RegisterPlayer1</servlet-name>
+  	<display-name>RegisterPlayer1</display-name>
+  	<description></description>
+  	<servlet-class>com.game.controller.RegisterPlayer1</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ViewPlayers</servlet-name>
+  	<display-name>ViewPlayers</display-name>
+  	<description></description>
+  	<servlet-class>com.game.controller.ViewPlayers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RegisterPlayer</servlet-name>
+  	<url-pattern>/RegisterPlayer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegisterPlayer1</servlet-name>
+  	<url-pattern>/RegisterPlayer1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewPlayers</servlet-name>
+  	<url-pattern>/ViewPlayers</url-pattern>
+  </servlet-mapping>
+</web-app>
