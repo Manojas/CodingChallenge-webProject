@@ -4,4 +4,6 @@ com\game\utility\GetConnection.class
 com\game\utility\MyException.class
 com\game\dao\PlayerDAOImple.class
 com\game\controller\ViewPlayers.class
+com\game\service\AddToDatabase.class
+com\game\service\GetPlayerDetails.class
 com\game\controller\RegisterPlayer.class

@@ -1,6 +1,7 @@
 package com.game.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -10,9 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.parser.ParseException;
+
 import com.game.dao.PlayerDAOImple;
 import com.game.dao.PlayerDAOInterface;
 import com.game.model.Player;
+import com.game.service.AddToDatabase;
+import com.game.service.GetPlayerDetails;
 import com.game.utility.MyException;
 
 /**
@@ -52,6 +57,16 @@ public class ViewPlayers extends HttpServlet {
 				 req.setAttribute("Players",ls2);
 					RequestDispatcher rd= req.getRequestDispatcher("PlayersDetails.jsp");
 					rd.forward(req,res);
+					try {
+						GetPlayerDetails.storeToJson();
+						AddToDatabase.addToDatabase();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 				else
 				{
