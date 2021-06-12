@@ -27,11 +27,14 @@ public static void storeToJson() throws SQLException
 		rs=st.executeQuery(str);
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		System.out.println(e.getMessage());
+		System.out.println("SQL Exception");
 	}
 	finally {
+		if(st!=null)
+		{
 		st.close();
 		con.close();
+		}
 	}
 	JSONObject jObject=new JSONObject();
 	JSONArray jArray=new JSONArray();
@@ -50,10 +53,22 @@ public static void storeToJson() throws SQLException
 	try {
 		file = new FileWriter("D:/PlayerDetails.json");
 		file.write(jObject.toJSONString());
-		file.close();
+		
+		
 	}  catch (IOException e) {
 		// TODO Auto-generated catch block
-		System.out.println(e.getMessage());
+		System.out.println("File IO Exception");
+	}
+	finally {
+		if(file!=null)
+		{
+			try {
+				file.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.out.println("File error");
+			}
+		}
 	}
 }
 }
