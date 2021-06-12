@@ -15,10 +15,11 @@ public class GetConnection {
 
 	public static Connection getConnection() {
 		Connection con = null;
-
+		Credentials cred=new Credentials();
+		//String user=cred.getUser();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/game?user=root&password=Kiccha@123");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/game?user="+cred.getUser()+"&password="+cred.getPassword()+"");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Class not found");
 		}
