@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.game.model.Player;
@@ -98,7 +97,7 @@ public class PlayerDAOImple implements PlayerDAOInterface {
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		} finally {
 			if (con != null) {
 				// con.close();
@@ -126,7 +125,7 @@ public class PlayerDAOImple implements PlayerDAOInterface {
 				return true;
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		} finally {
 			if (con != null) {
 				// con.close();

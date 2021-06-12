@@ -1,13 +1,9 @@
 package com.game.service;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -29,7 +25,7 @@ public class AddToDatabase {
 			// JSONArray jsonArray = (JSONArray) jsonObject.get("PlayerDetails");
 			System.out.println(jsonArray);
 			Connection con = null;
-			ResultSet rs = null;
+			//ResultSet rs = null;
 			con = GetConnection.getConnection();
 			// String str = "Select * from player";
 			PreparedStatement st = null;
@@ -50,7 +46,7 @@ public class AddToDatabase {
 
 		} catch (Exception e) {
 			// System.out.println(e.getMessage());
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 }
