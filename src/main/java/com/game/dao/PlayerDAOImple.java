@@ -13,7 +13,6 @@ import com.game.utility.MyException;
 public class PlayerDAOImple implements PlayerDAOInterface {
 
 	public String registerPlayer(ArrayList<Player> ls) {
-		// TODO Auto-generated method stub
 		Player player = ls.get(0);
 		Connection con = GetConnection.getConnection();
 		PreparedStatement pt = null;
@@ -112,7 +111,6 @@ public class PlayerDAOImple implements PlayerDAOInterface {
 
 	@Override
 	public boolean checkPlayerId(short id) throws MyException {
-		// TODO Auto-generated method stub
 		Connection con = null;
 		PreparedStatement stmt = null;
 		try {
@@ -128,7 +126,6 @@ public class PlayerDAOImple implements PlayerDAOInterface {
 			System.out.println(e.getMessage());
 		} finally {
 			if (con != null) {
-				// con.close();
 				GetConnection.closeConnection(con);
 			}
 			if (stmt != null) {

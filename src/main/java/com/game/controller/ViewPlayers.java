@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,9 +45,9 @@ public class ViewPlayers extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		String team=req.getParameter("team");
-		//ArrayList<Player> ls2=null;
+
 		
 			try {
 				if(pdi.checkTeam(team))
@@ -61,22 +60,17 @@ public class ViewPlayers extends HttpServlet {
 						GetPlayerDetails.storeToJson();
 						AddToDatabase.addToDatabase();
 					} catch (SQLException e) {
-						// TODO Auto-generated catch block
+						
 						System.out.println(e.getMessage());
 					} catch (ParseException e) {
-						// TODO Auto-generated catch block
 						System.out.println(e.getMessage());
 					}
 				}
 				else
 				{
 					res.getWriter().write(" Ther is no such players belongs to this "+team);
-//			req.setAttribute("There are no players belong to this team", team);	
-//			RequestDispatcher rd= req.getRequestDispatcher("PlayersDetails.jsp");
-//			rd.forward(req,res);
 				}
 			} catch (MyException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		

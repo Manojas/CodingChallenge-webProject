@@ -16,26 +16,22 @@ public class AddToDatabase {
 	public static void addToDatabase() throws IOException, ParseException {
 		JSONParser jsonParser = new JSONParser();
 
-		// JSONObject jsonObject = null;
 		try {
 			JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("D:/PlayerDetails2.json"));
-            System.out.println(jsonObject);
+			System.out.println(jsonObject);
 			JSONArray jsonArray = (JSONArray) jsonObject.get("PlayerDetails");
 
-			// JSONArray jsonArray = (JSONArray) jsonObject.get("PlayerDetails");
 			System.out.println(jsonArray);
 			Connection con = null;
-			//ResultSet rs = null;
 			con = GetConnection.getConnection();
-			// String str = "Select * from player";
 			PreparedStatement st = null;
 
 			st = con.prepareStatement("INSERT INTO player2 values (?, ?, ?)");
 			for (Object obj : jsonArray) {
 				JSONObject record = (JSONObject) obj;
 
-				short id = (short) Integer.parseInt( (String) record.get("PlayerId"));
-				short age = (short)Integer.parseInt((String) record.get("PlayerAge"));
+				short id = (short) Integer.parseInt((String) record.get("PlayerId"));
+				short age = (short) Integer.parseInt((String) record.get("PlayerAge"));
 				String playername = (String) record.get("PlayerName");
 
 				st.setShort(1, id);
@@ -45,7 +41,6 @@ public class AddToDatabase {
 			}
 
 		} catch (Exception e) {
-			// System.out.println(e.getMessage());
 			System.out.println(e.getMessage());
 		}
 	}
