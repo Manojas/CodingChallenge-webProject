@@ -3,7 +3,7 @@ package com.game.utility;
 public class Credentials {
 
 	private String user="root";
-	private String password="Kiccha@123";
+	private String password2="Kiccha@123";
 	
 	
 	public Credentials() {
@@ -22,12 +22,12 @@ public class Credentials {
 
 
 	public String getPassword() {
-		return password;
+		return password2;
 	}
 
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.password2 = password;
 	}
 	
 	
