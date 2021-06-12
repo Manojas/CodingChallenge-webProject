@@ -18,6 +18,7 @@ public Player(short playerId, String playerName,short playerAge, String playerGe
 	this.playerGender = playerGender;
 	this.teamName = teamName;
 }
+//change
 public String getPlayerName() {
 	return playerName;
 }
