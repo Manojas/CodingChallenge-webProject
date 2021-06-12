@@ -62,10 +62,10 @@ public class ViewPlayers extends HttpServlet {
 						AddToDatabase.addToDatabase();
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
-						e.printStackTrace();
+						System.out.println(e.getMessage());
 					} catch (ParseException e) {
 						// TODO Auto-generated catch block
-						e.printStackTrace();
+						System.out.println(e.getMessage());
 					}
 				}
 				else

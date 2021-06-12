@@ -42,9 +42,9 @@ Lots of foriegn players took part here to make this event as a grand success</p>
 <br>
 <p id="display"></p>
 <input type="button" value="Greeting" onclick="loadMessage()">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">-->
 
-
+<script type="text/javascript">
 $(document).ready(function()
 		{
 	$("btn").click(function()
